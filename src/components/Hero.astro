@@ -11,9 +11,7 @@ const { eyebrow, title, subtitle } = content.hero;
     <p class="hero-sub">{subtitle}</p>
   </div>
   <div class="hero-image">
-    <div class="hero-placeholder">
-      <span class="placeholder-text">Y</span>
-    </div>
+    <img src="/profile.jpeg" alt="yreh" class="hero-profile" />
   </div>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
@@ -86,24 +84,12 @@ const { eyebrow, title, subtitle } = content.hero;
     animation: fadeUp 0.8s ease 0.5s forwards;
   }
 
-  .hero-placeholder {
+  .hero-profile {
     width: 320px;
     height: 320px;
     border-radius: 50%;
-    background: var(--surface);
+    object-fit: cover;
     border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .placeholder-text {
-    font-family: var(--serif);
-    font-size: 8rem;
-    color: var(--border);
-    user-select: none;
   }
 
   .hero-scroll {
@@ -158,13 +144,9 @@ const { eyebrow, title, subtitle } = content.hero;
       order: 1;
     }
 
-    .hero-placeholder {
+    .hero-profile {
       width: 200px;
       height: 200px;
-    }
-
-    .placeholder-text {
-      font-size: 5rem;
     }
 
     .hero-title {
