@@ -1,0 +1,39 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import projects from '../data/projects.json';
+---
+
+<section class="projects reveal" id="projects">
+  <div class="section-label">Projects — 01</div>
+  <div class="project-grid">
+    {projects.map(project => (
+      <ProjectCard
+        number={project.number}
+        name={project.name}
+        tag={project.tag}
+        description={project.description}
+        url={project.url}
+      />
+    ))}
+  </div>
+</section>
+
+<style>
+  .projects {
+    border-top: 1px solid var(--border);
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

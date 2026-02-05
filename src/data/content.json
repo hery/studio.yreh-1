@@ -1,0 +1,46 @@
+{
+  "brand": "yreh",
+  "tagline": "Build. Ship. Repeat.",
+  "description": "Solo studio shipping software products fast — launching, learning, and iterating until something sticks.",
+  "hero": {
+    "eyebrow": "Solo bootstrapper — building in public",
+    "title": "Build. <em>Ship.</em><br>Repeat.",
+    "subtitle": "yreh is a solo studio shipping software products fast — launching, learning, and iterating until something sticks. No investors, no permission, no waiting."
+  },
+  "philosophy": "Most ideas fail. <span>That's the point.</span> Ship enough products, and the market tells you which one deserves your next decade. <em>Volume is the strategy.</em>",
+  "identity": {
+    "logoMark": "YREH",
+    "logoWordmark": "yreh",
+    "logoAlt": "yreh.com",
+    "typography": {
+      "serif": "Instrument Serif",
+      "monoDescription": "DM Mono — Light 300<br>Used for body text, navigation,<br>labels, and all functional type."
+    },
+    "colors": [
+      { "name": "Ink", "hex": "#1A1A18" },
+      { "name": "Paper", "hex": "#FAFAF8" },
+      { "name": "Stone", "hex": "#8A8A82" },
+      { "name": "Fog", "hex": "#E2E2DC" }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2025 YREH — Shipping until something sticks",
+    "links": [
+      { "label": "Twitter", "url": "#" },
+      { "label": "GitHub", "url": "#" },
+      { "label": "Contact", "url": "mailto:hello@yreh.com" }
+    ]
+  },
+  "nav": {
+    "logo": "yreh",
+    "links": [
+      { "label": "Projects", "href": "#projects" },
+      { "label": "Identity", "href": "#identity" },
+      { "label": "Principles", "href": "#principles" }
+    ]
+  },
+  "seo": {
+    "title": "yreh — build, ship, repeat",
+    "description": "Solo studio shipping software products fast. Launching, learning, and iterating until something sticks."
+  }
+}

@@ -1,0 +1,101 @@
+---
+interface Props {
+  number: string;
+  name: string;
+  tag: string;
+  description: string;
+  url?: string | null;
+}
+
+const { number, name, tag, description, url } = Astro.props;
+const Tag = url ? 'a' : 'div';
+---
+
+<Tag class="project-card" href={url || undefined} target={url ? "_blank" : undefined} rel={url ? "noopener noreferrer" : undefined}>
+  <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+  </svg>
+  <div>
+    <div class="project-number">{number}</div>
+    <div class="project-name">{name}</div>
+    <div class="project-tag">{tag}</div>
+  </div>
+  <div class="project-desc">{description}</div>
+</Tag>
+
+<style>
+  .project-card {
+    background: var(--bg);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.4s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .project-card:hover {
+    background: var(--surface);
+  }
+
+  .project-number {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .project-name {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .project-tag {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: auto;
+  }
+
+  .project-desc {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-top: 2rem;
+    max-width: 340px;
+  }
+
+  .project-arrow {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .project-card:hover .project-arrow {
+    opacity: 1;
+    transform: translate(2px, -2px);
+  }
+
+  @media (max-width: 768px) {
+    .project-card {
+      min-height: 260px;
+    }
+  }
+</style>

@@ -1,0 +1,87 @@
+{
+  "brand": "yreh",
+  "tagline": "Build. Ship. Repeat.",
+  "description": "Solo studio shipping software products fast — launching, learning, and iterating until something sticks.",
+  
+  "colors": {
+    "ink": "#1A1A18",
+    "paper": "#FAFAF8",
+    "stone": "#8A8A82",
+    "fog": "#E2E2DC",
+    "surface": "#F2F2EE"
+  },
+
+  "typography": {
+    "display": {
+      "family": "Instrument Serif",
+      "weights": [400],
+      "usage": "Hero titles, project names, section headings, philosophy text"
+    },
+    "body": {
+      "family": "DM Mono",
+      "weights": [300, 400, 500],
+      "usage": "Navigation, labels, body text, all functional type"
+    }
+  },
+
+  "projects": [
+    {
+      "number": "01",
+      "name": "Cover",
+      "tag": "Invoicing for yoga teachers",
+      "description": "Automates studio attendance reports into professional invoices. Built for independent instructors who'd rather teach than do admin.",
+      "url": "https://cover.yoga"
+    },
+    {
+      "number": "02",
+      "name": "Nudge",
+      "tag": "Cross-device reminders",
+      "description": "A reminder app that actually syncs. Set it on your phone, get it on your desktop. Simple, persistent, everywhere.",
+      "url": null
+    },
+    {
+      "number": "03",
+      "name": "Placed",
+      "tag": "AI wall art visualization",
+      "description": "See artwork on your walls before you buy. Snap your room, choose a piece, and visualize it in context with AI-powered rendering.",
+      "url": null
+    },
+    {
+      "number": "04",
+      "name": "Latent Wonder",
+      "tag": "Creative AI exploration",
+      "description": "Experiments at the intersection of generative AI and human creativity. Where latent space meets wonder.",
+      "url": null
+    }
+  ],
+
+  "principles": [
+    {
+      "number": "01",
+      "title": "Small bets, fast loops",
+      "description": "Launch in weeks, not months. Every product is a hypothesis — the market is the only judge that matters."
+    },
+    {
+      "number": "02",
+      "title": "Revenue is signal",
+      "description": "Downloads and stars are vanity. Someone paying you money is the only proof that you've solved a real problem."
+    },
+    {
+      "number": "03",
+      "title": "Kill fast, double down slow",
+      "description": "Most projects should die young. When one gets traction, that's when patience and craft kick in."
+    },
+    {
+      "number": "04",
+      "title": "Stay default alive",
+      "description": "No fundraising. No burn rate. Build from revenue, keep costs near zero, and own every decision."
+    }
+  ],
+
+  "philosophy": "Most ideas fail. That's the point. Ship enough products, and the market tells you which one deserves your next decade. Volume is the strategy.",
+
+  "footer": {
+    "copyright": "© 2025 YREH — Shipping until something sticks",
+    "links": ["Twitter", "GitHub", "Contact"]
+  }
+}

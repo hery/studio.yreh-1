@@ -1,0 +1,172 @@
+---
+import content from '../data/content.json';
+
+const { logoMark, logoWordmark, logoAlt, typography, colors } = content.identity;
+---
+
+<section class="identity reveal" id="identity">
+  <div class="section-label">Identity system — 02</div>
+  <div class="identity-grid">
+
+    <!-- Logo -->
+    <div class="identity-block">
+      <h3>Logo marks</h3>
+      <div class="logo-display">
+        <div class="logo-mark">{logoMark}</div>
+        <div class="logo-wordmark">{logoWordmark}</div>
+        <div class="logo-alt">
+          <div class="logo-dot"></div>
+          <span class="logo-alt-text">{logoAlt}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Typography -->
+    <div class="identity-block">
+      <h3>Typography</h3>
+      <div class="type-sample-serif">{typography.serif}</div>
+      <div class="type-sample-mono" set:html={typography.monoDescription} />
+    </div>
+
+    <!-- Colors -->
+    <div class="identity-block">
+      <h3>Palette</h3>
+      <div class="color-swatches">
+        {colors.map(color => (
+          <div class="swatch">
+            <div class="swatch-circle" style={`background: ${color.hex};`}></div>
+            <div class="swatch-info">
+              <strong>{color.name}</strong>
+              {color.hex}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .identity {
+    border-top: 1px solid var(--border);
+    padding: 8rem 2.5rem;
+  }
+
+  .identity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .identity-block h3 {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .type-sample-serif {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .type-sample-mono {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .color-swatches {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .swatch {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .swatch-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .swatch-info {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .swatch-info strong {
+    color: var(--fg);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  .logo-display {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .logo-mark {
+    font-family: var(--mono);
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+  }
+
+  .logo-wordmark {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    letter-spacing: -0.02em;
+  }
+
+  .logo-alt {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--fg);
+    border-radius: 50%;
+  }
+
+  .logo-alt-text {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 768px) {
+    .identity {
+      padding: 5rem 1.5rem;
+    }
+
+    .identity-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

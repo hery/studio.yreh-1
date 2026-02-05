@@ -1,0 +1,63 @@
+---
+import principles from '../data/principles.json';
+---
+
+<section class="principles reveal" id="principles">
+  <div class="section-label">Brand principles — 03</div>
+  <div class="principle-list">
+    {principles.map(principle => (
+      <div class="principle">
+        <span class="principle-num">{principle.number}</span>
+        <div class="principle-content">
+          <h3>{principle.title}</h3>
+          <p>{principle.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .principles {
+    border-top: 1px solid var(--border);
+  }
+
+  .principle-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .principle {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+  }
+
+  .principle-num {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .principle-content h3 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .principle-content p {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 540px;
+  }
+</style>

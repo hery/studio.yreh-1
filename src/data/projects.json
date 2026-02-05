@@ -1,0 +1,30 @@
+[
+  {
+    "number": "01",
+    "name": "Cover",
+    "tag": "Invoicing for yoga teachers",
+    "description": "Automates studio attendance reports into professional invoices. Built for independent instructors who'd rather teach than do admin.",
+    "url": "https://cover.yoga"
+  },
+  {
+    "number": "02",
+    "name": "Nudge",
+    "tag": "Cross-device reminders",
+    "description": "A reminder app that actually syncs. Set it on your phone, get it on your desktop. Simple, persistent, everywhere.",
+    "url": null
+  },
+  {
+    "number": "03",
+    "name": "Placed",
+    "tag": "AI wall art visualization",
+    "description": "See artwork on your walls before you buy. Snap your room, choose a piece, and visualize it in context with AI-powered rendering.",
+    "url": null
+  },
+  {
+    "number": "04",
+    "name": "Latent Wonder",
+    "tag": "Creative AI exploration",
+    "description": "Experiments at the intersection of generative AI and human creativity. Where latent space meets wonder.",
+    "url": null
+  }
+]

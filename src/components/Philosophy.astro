@@ -1,0 +1,40 @@
+---
+import content from '../data/content.json';
+
+const text = content.philosophy;
+---
+
+<div class="philosophy reveal">
+  <p class="philosophy-text" set:html={text} />
+</div>
+
+<style>
+  .philosophy {
+    padding: 8rem 2.5rem;
+    border-top: 1px solid var(--border);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .philosophy-text {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+    line-height: 1.4;
+    max-width: 800px;
+    letter-spacing: -0.01em;
+  }
+
+  .philosophy-text :global(span) {
+    color: var(--muted);
+  }
+
+  .philosophy-text :global(em) {
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .philosophy {
+      padding: 5rem 1.5rem;
+    }
+  }
+</style>
