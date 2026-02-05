@@ -5,9 +5,16 @@ const { eyebrow, title, subtitle } = content.hero;
 ---
 
 <div class="hero">
-  <p class="hero-eyebrow">{eyebrow}</p>
-  <h1 class="hero-title" set:html={title} />
-  <p class="hero-sub">{subtitle}</p>
+  <div class="hero-content">
+    <p class="hero-eyebrow">{eyebrow}</p>
+    <h1 class="hero-title" set:html={title} />
+    <p class="hero-sub">{subtitle}</p>
+  </div>
+  <div class="hero-image">
+    <div class="hero-placeholder">
+      <span class="placeholder-text">Y</span>
+    </div>
+  </div>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
     Scroll
@@ -17,13 +24,20 @@ const { eyebrow, title, subtitle } = content.hero;
 <style>
   .hero {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
     padding: 8rem 2.5rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .hero-eyebrow {
@@ -39,7 +53,7 @@ const { eyebrow, title, subtitle } = content.hero;
 
   .hero-title {
     font-family: var(--serif);
-    font-size: clamp(3.5rem, 9vw, 8rem);
+    font-size: clamp(3rem, 7vw, 6rem);
     font-weight: 400;
     line-height: 0.95;
     letter-spacing: -0.03em;
@@ -62,6 +76,34 @@ const { eyebrow, title, subtitle } = content.hero;
     line-height: 1.8;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+
+  .hero-placeholder {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .placeholder-text {
+    font-family: var(--serif);
+    font-size: 8rem;
+    color: var(--border);
+    user-select: none;
   }
 
   .hero-scroll {
@@ -101,7 +143,32 @@ const { eyebrow, title, subtitle } = content.hero;
 
   @media (max-width: 768px) {
     .hero {
+      grid-template-columns: 1fr;
+      gap: 3rem;
       padding: 7rem 1.5rem 3rem;
+      min-height: auto;
+      padding-bottom: 6rem;
+    }
+
+    .hero-content {
+      order: 2;
+    }
+
+    .hero-image {
+      order: 1;
+    }
+
+    .hero-placeholder {
+      width: 200px;
+      height: 200px;
+    }
+
+    .placeholder-text {
+      font-size: 5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 10vw, 4rem);
     }
   }
 </style>
