@@ -2,13 +2,14 @@
 interface Props {
   name: string;
   tag: string;
+  shipped: string;
   description: string;
   url?: string | null;
   mrr: number;
   logo?: string | null;
 }
 
-const { name, tag, description, url, mrr, logo } = Astro.props;
+const { name, tag, shipped, description, url, mrr, logo } = Astro.props;
 const Tag = url ? 'a' : 'div';
 const initials = name.split(' ').map(word => word.charAt(0)).join('');
 ---
@@ -29,7 +30,10 @@ const initials = name.split(' ').map(word => word.charAt(0)).join('');
   </div>
   <div class="project-bottom">
     <div class="project-desc">{description}</div>
-    <div class="project-mrr">€{mrr}/mo</div>
+    <div class="project-meta">
+      <div class="project-mrr">€{mrr}/mo</div>
+      <div class="project-shipped">{shipped}</div>
+    </div>
   </div>
 </Tag>
 
@@ -111,6 +115,21 @@ const initials = name.split(' ').map(word => word.charAt(0)).join('');
     color: var(--muted);
   }
 
+  .project-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+    flex-shrink: 0;
+  }
+
+  .project-shipped {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    opacity: 0.7;
+  }
+
   .project-bottom {
     display: flex;
     justify-content: space-between;
@@ -130,10 +149,9 @@ const initials = name.split(' ').map(word => word.charAt(0)).join('');
 
   .project-mrr {
     font-family: var(--mono);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--muted);
     opacity: 0.7;
-    flex-shrink: 0;
   }
 
   @media (max-width: 768px) {
