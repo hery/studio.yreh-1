@@ -25,7 +25,7 @@
     ]
   },
   "nav": {
-    "logo": "yreh",
+    "logo": "studio.yreh",
     "links": [
       { "label": "Projects", "href": "#projects" },
       { "label": "Principles", "href": "#principles" },
