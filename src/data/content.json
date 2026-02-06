@@ -28,7 +28,8 @@
     "logo": "yreh",
     "links": [
       { "label": "Projects", "href": "#projects" },
-      { "label": "Principles", "href": "#principles" }
+      { "label": "Principles", "href": "#principles" },
+      { "label": "Contact", "href": "#contact" }
     ]
   },
   "seo": {

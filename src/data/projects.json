@@ -5,23 +5,26 @@
     "tag": "Invoicing for yoga teachers",
     "description": "Automates studio attendance reports into professional invoices. Built for independent instructors who'd rather teach than do admin.",
     "url": "https://cover.yoga",
-    "mrr": 0
+    "mrr": 0,
+    "logo": "/cover_logo.png"
   },
   {
     "number": "02",
     "name": "Nudge",
     "tag": "Cross-device reminders",
-    "description": "A reminder app that actually syncs. Set it on your phone, get it on your desktop. Simple, persistent, everywhere.",
+    "description": "Real-time synced reminders across all your iOS and Android devices. Dismiss or snooze on one, updated everywhere. Simple, persistent, always in sync.",
     "url": null,
-    "mrr": 0
+    "mrr": 0,
+    "logo": "/nudge_logo.png"
   },
   {
     "number": "03",
     "name": "Placed",
     "tag": "AI wall art visualization",
-    "description": "See artwork on your walls before you buy. Snap your room, choose a piece, and visualize it in context with AI-powered rendering.",
+    "description": "Generate AI art or upscale your own images. Visualize them on your walls, then print and buy in high quality. From idea to framed piece, all in one place.",
     "url": "https://placed.space",
-    "mrr": 0
+    "mrr": 0,
+    "logo": "/placed_logo.png"
   },
   {
     "number": "04",
@@ -29,6 +32,7 @@
     "tag": "Creative AI exploration",
     "description": "Experiments at the intersection of generative AI and human creativity. Where latent space meets wonder.",
     "url": "https://latentwonder.com",
-    "mrr": 0
+    "mrr": 0,
+    "logo": null
   }
 ]

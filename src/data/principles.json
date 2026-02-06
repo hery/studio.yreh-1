@@ -17,6 +17,10 @@
   {
     "number": "04",
     "title": "Stay default alive",
-    "description": "No fundraising. No burn rate. Build from revenue, keep costs near zero, and own every decision."
+    "description": "No fundraising. No burn rate. Build from revenue, keep costs near zero, and own every decision.",
+    "link": {
+      "label": "What's default alive?",
+      "url": "https://paulgraham.com/aord.html"
+    }
   }
 ]
