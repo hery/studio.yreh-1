@@ -8,7 +8,6 @@ import projects from '../data/projects.json';
   <div class="project-grid">
     {projects.map(project => (
       <ProjectCard
-        number={project.number}
         name={project.name}
         tag={project.tag}
         description={project.description}
@@ -19,10 +18,6 @@ import projects from '../data/projects.json';
 </section>
 
 <style>
-  .projects {
-    border-top: 1px solid var(--border);
-  }
-
   .project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

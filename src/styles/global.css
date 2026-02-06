@@ -50,8 +50,6 @@ section {
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 3rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border);
 }
 
 /* Responsive */

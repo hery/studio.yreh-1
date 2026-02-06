@@ -1,24 +1,24 @@
 ---
 interface Props {
-  number: string;
   name: string;
   tag: string;
   description: string;
   url?: string | null;
 }
 
-const { number, name, tag, description, url } = Astro.props;
+const { name, tag, description, url } = Astro.props;
 const Tag = url ? 'a' : 'div';
 ---
 
 <Tag class="project-card" href={url || undefined} target={url ? "_blank" : undefined} rel={url ? "noopener noreferrer" : undefined}>
-  <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-    <path d="M7 17L17 7M17 7H7M17 7V17"/>
-  </svg>
-  <div>
-    <div class="project-number">{number}</div>
-    <div class="project-name">{name}</div>
-    <div class="project-tag">{tag}</div>
+  <div class="project-header">
+    <div class="project-info">
+      <div class="project-name">{name}</div>
+      <div class="project-tag">{tag}</div>
+    </div>
+    <div class="project-logo">
+      <span class="logo-letter">{name.charAt(0)}</span>
+    </div>
   </div>
   <div class="project-desc">{description}</div>
 </Tag>
@@ -42,12 +42,34 @@ const Tag = url ? 'a' : 'div';
     background: var(--surface);
   }
 
-  .project-number {
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .project-info {
+    flex: 1;
+  }
+
+  .project-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
+
+  .logo-letter {
+    font-family: var(--serif);
+    font-size: 1.5rem;
     color: var(--muted);
-    margin-bottom: 1.5rem;
   }
 
   .project-name {
@@ -56,7 +78,7 @@ const Tag = url ? 'a' : 'div';
     font-weight: 400;
     letter-spacing: -0.02em;
     line-height: 1.1;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .project-tag {
@@ -76,21 +98,6 @@ const Tag = url ? 'a' : 'div';
     line-height: 1.7;
     margin-top: 2rem;
     max-width: 340px;
-  }
-
-  .project-arrow {
-    position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
-    width: 24px;
-    height: 24px;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .project-card:hover .project-arrow {
-    opacity: 1;
-    transform: translate(2px, -2px);
   }
 
   @media (max-width: 768px) {
