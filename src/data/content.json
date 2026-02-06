@@ -32,7 +32,9 @@
     ]
   },
   "seo": {
-    "title": "yreh — build, ship, repeat",
-    "description": "Solo studio shipping software products fast. Launching, learning, and iterating until something sticks."
+    "title": "yreh — Solo Software Studio | Build, Ship, Repeat",
+    "description": "Solo bootstrapped studio shipping polished software products fast. Building in public, launching MVPs, and iterating until something sticks. Open for collaboration and freelance.",
+    "url": "https://yreh.studio",
+    "image": "/og-image.png"
   }
 }
