@@ -1,0 +1,56 @@
+---
+import content from '../data/content.json';
+
+const { headline, description, cta } = content.contact;
+---
+
+<section class="contact reveal" id="contact">
+  <div class="section-label">Contact — 03</div>
+  <div class="contact-content">
+    <h2>{headline}</h2>
+    <p>{description}</p>
+    <a href={cta.url} class="contact-cta">{cta.label}</a>
+  </div>
+</section>
+
+<style>
+  .contact-content {
+    max-width: 600px;
+  }
+
+  .contact-content h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .contact-content p {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .contact-cta {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--fg);
+    text-decoration: none;
+    padding: 1.25rem 2.5rem;
+    margin-top: 1rem;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  .contact-cta:hover {
+    background: var(--fg);
+    color: var(--bg);
+    border-color: var(--fg);
+  }
+</style>

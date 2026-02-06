@@ -4,9 +4,10 @@ interface Props {
   tag: string;
   description: string;
   url?: string | null;
+  mrr: number;
 }
 
-const { name, tag, description, url } = Astro.props;
+const { name, tag, description, url, mrr } = Astro.props;
 const Tag = url ? 'a' : 'div';
 ---
 
@@ -20,7 +21,10 @@ const Tag = url ? 'a' : 'div';
       <span class="logo-letter">{name.charAt(0)}</span>
     </div>
   </div>
-  <div class="project-desc">{description}</div>
+  <div class="project-bottom">
+    <div class="project-desc">{description}</div>
+    <div class="project-mrr">€{mrr}/mo</div>
+  </div>
 </Tag>
 
 <style>
@@ -87,7 +91,14 @@ const Tag = url ? 'a' : 'div';
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: auto;
+  }
+
+  .project-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
   }
 
   .project-desc {
@@ -96,8 +107,15 @@ const Tag = url ? 'a' : 'div';
     font-weight: 300;
     color: var(--muted);
     line-height: 1.7;
-    margin-top: 2rem;
-    max-width: 340px;
+    max-width: 300px;
+  }
+
+  .project-mrr {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    opacity: 0.7;
+    flex-shrink: 0;
   }
 
   @media (max-width: 768px) {

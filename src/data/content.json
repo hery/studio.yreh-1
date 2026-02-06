@@ -8,11 +8,19 @@
     "subtitle": "yreh is a solo studio shipping software products fast — launching, learning, and iterating until something sticks. No investors, no permission, no waiting."
   },
   "philosophy": "Most ideas fail. <span>That's the point.</span> Ship enough products, and the market tells you which one deserves your next decade. <em>Volume is the strategy.</em>",
+  "contact": {
+    "headline": "Let's build something",
+    "description": "Open to collaborations on ambitious projects and selective freelance work. I ship fast without cutting corners — high velocity, high polish.",
+    "cta": {
+      "label": "Get in touch",
+      "url": "mailto:hello@yreh.com"
+    }
+  },
   "footer": {
     "copyright": "© 2025 YREH — Shipping until something sticks",
     "links": [
-      { "label": "Twitter", "url": "#" },
-      { "label": "GitHub", "url": "#" },
+      { "label": "Twitter", "url": "https://x.com/heeery" },
+      { "label": "GitHub", "url": "https://github.com/hery" },
       { "label": "Contact", "url": "mailto:hello@yreh.com" }
     ]
   },
