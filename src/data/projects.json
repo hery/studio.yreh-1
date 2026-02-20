@@ -23,7 +23,7 @@
     "number": "03",
     "name": "Placed",
     "tag": "AI wall art visualization",
-    "shipped": "Launching Feb. 2026",
+    "shipped": "Launched Feb. 2026",
     "description": "Generate AI art or upscale your own images. Visualize them on your walls, then print and buy in high quality. From idea to framed piece, all in one place.",
     "url": "https://placed.space",
     "mrr": 0,
@@ -38,5 +38,15 @@
     "url": "https://latentwonder.com",
     "mrr": 0,
     "logo": null
+  },
+  {
+    "number": "05",
+    "name": "Season",
+    "tag": "Biography to discography",
+    "shipped": "Launched Feb. 2026",
+    "description": "Drop your biography, get a full fictional discography. A viral profile generator that turns your life story into albums, tracks, and a shareable artist page.",
+    "url": "https://season.fm",
+    "mrr": 0,
+    "logo": "/season_logo.svg"
   }
 ]
