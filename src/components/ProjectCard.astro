@@ -7,14 +7,23 @@ interface Props {
   url?: string | null;
   mrr: number;
   logo?: string | null;
+  status?: string;
+  ended?: string | null;
 }
 
-const { name, tag, shipped, description, url, mrr, logo } = Astro.props;
-const Tag = url ? 'a' : 'div';
+const { name, tag, shipped, description, url, mrr, logo, status = 'active', ended } = Astro.props;
+const isSunset = status === 'sunset';
+const href = !isSunset && url ? url : undefined;
+const Tag = href ? 'a' : 'div';
 const initials = name.split(' ').map(word => word.charAt(0)).join('');
 ---
 
-<Tag class="project-card" href={url || undefined} target={url ? "_blank" : undefined} rel={url ? "noopener noreferrer" : undefined}>
+<Tag
+  class:list={["project-card", { "is-sunset": isSunset }]}
+  href={href}
+  target={href ? "_blank" : undefined}
+  rel={href ? "noopener noreferrer" : undefined}
+>
   <div class="project-header">
     <div class="project-info">
       <div class="project-name">{name}</div>
@@ -33,6 +42,11 @@ const initials = name.split(' ').map(word => word.charAt(0)).join('');
     <div class="project-meta">
       {/* <div class="project-mrr">€{mrr}/mo</div> */}
       <div class="project-shipped">{shipped}</div>
+      {isSunset ? (
+        <div class="project-status status-sunset">Sunset{ended ? ` — ${ended}` : ''}</div>
+      ) : (
+        <div class="project-status status-active"><span class="status-dot" aria-hidden="true"></span>Active</div>
+      )}
     </div>
   </div>
 </Tag>
@@ -46,14 +60,31 @@ const initials = name.split(' ').map(word => word.charAt(0)).join('');
     justify-content: space-between;
     min-height: 320px;
     position: relative;
-    cursor: pointer;
     transition: background 0.4s ease;
     text-decoration: none;
     color: inherit;
   }
 
-  .project-card:hover {
+  a.project-card {
+    cursor: pointer;
+  }
+
+  a.project-card:hover {
     background: var(--surface);
+  }
+
+  .project-card.is-sunset {
+    background-image: var(--hatch);
+    background-size: 8px 8px;
+  }
+
+  .project-card.is-sunset .project-name {
+    color: var(--muted);
+  }
+
+  .project-card.is-sunset .project-logo {
+    filter: grayscale(1);
+    opacity: 0.55;
   }
 
   .project-header {
@@ -119,7 +150,7 @@ const initials = name.split(' ').map(word => word.charAt(0)).join('');
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 0.25rem;
+    gap: 0.5rem;
     flex-shrink: 0;
   }
 
@@ -128,6 +159,37 @@ const initials = name.split(' ').map(word => word.charAt(0)).join('');
     font-size: 0.65rem;
     color: var(--muted);
     opacity: 0.7;
+  }
+
+  .project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.45em 0.9em;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--fg);
+  }
+
+  .status-sunset {
+    color: var(--muted);
+  }
+
+  .status-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--fg);
+    animation: statusPulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes statusPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
   }
 
   .project-bottom {
