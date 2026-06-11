@@ -38,6 +38,11 @@ body {
   color: var(--bg);
 }
 
+a:focus-visible {
+  outline: 1px solid var(--fg);
+  outline-offset: 4px;
+}
+
 /* Section shared styles */
 section {
   padding: 6rem 2.5rem;

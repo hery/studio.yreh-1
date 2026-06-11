@@ -15,9 +15,9 @@ const { logo, links } = content.nav;
 
 <script>
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav?.classList.toggle('scrolled', window.scrollY > 40);
-  });
+  const onScroll = () => nav?.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 </script>
 
 <style>

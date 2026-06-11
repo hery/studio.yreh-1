@@ -26,12 +26,12 @@ const initials = name.split(' ').map(word => word.charAt(0)).join('');
 >
   <div class="project-header">
     <div class="project-info">
-      <div class="project-name">{name}</div>
+      <h3 class="project-name">{name}{href && <span class="project-arrow" aria-hidden="true">↗</span>}</h3>
       <div class="project-tag">{tag}</div>
     </div>
     <div class:list={["project-logo", { "has-logo": logo }]}>
       {logo ? (
-        <img src={logo} alt={`${name} logo`} class="logo-image" />
+        <img src={logo} alt={`${name} logo`} class="logo-image" width="48" height="48" loading="lazy" />
       ) : (
         <span class="logo-letter">{initials}</span>
       )}
@@ -71,6 +71,11 @@ const initials = name.split(' ').map(word => word.charAt(0)).join('');
 
   a.project-card:hover {
     background: var(--surface);
+  }
+
+  a.project-card:focus-visible {
+    background: var(--surface);
+    outline-offset: -6px;
   }
 
   .project-card.is-sunset {
@@ -136,6 +141,24 @@ const initials = name.split(' ').map(word => word.charAt(0)).join('');
     letter-spacing: -0.02em;
     line-height: 1.1;
     margin-bottom: 0.5rem;
+  }
+
+  .project-arrow {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.4em;
+    vertical-align: super;
+    margin-left: 0.5em;
+    color: var(--muted);
+    opacity: 0;
+    translate: -4px 4px;
+    transition: opacity 0.35s ease, translate 0.35s ease;
+  }
+
+  a.project-card:hover .project-arrow,
+  a.project-card:focus-visible .project-arrow {
+    opacity: 1;
+    translate: 0 0;
   }
 
   .project-tag {
